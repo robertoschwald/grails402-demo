@@ -11,8 +11,7 @@ class MyDomainController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        log.error("bla")
-        // println "blabla"
+        log.warn("bla")
         respond myDomainService.list(params), model:[myDomainCount: myDomainService.count()]
     }
 
